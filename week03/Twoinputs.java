@@ -1,17 +1,41 @@
-class Main {
-  public static void main(String[] args) {
-    Scanner myObj = new Scanner(System.in);
+import java.util.Scanner;
 
-    System.out.println("Enter two integers");
+public class MathOperators {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-     // Numerical input
-    int first number = myObj.nextInt();
-    int second number = myObj.nextInt();
-    
+        // Ask for first number
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
 
-    // Output input by user
-    System.out.println("first number " + first number); 
-    System.out.println("second number " + second number); 
-   
-  }
+        // Ask for second number
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+
+        // Perform operations
+        int sum = num1 + num2;
+        int difference = num1 - num2;
+        int product = num1 * num2;
+        double quotient = 0;
+
+        // Check to avoid division by zero
+        if (num2 != 0) {
+            quotient = (double) num1 / num2;
+        } else {
+            System.out.println("Division by zero is not allowed.");
+        }
+
+        // Display results
+        System.out.println("\nResults:");
+        System.out.println(num1 + " + " + num2 + " = " + sum);
+        System.out.println(num1 + " - " + num2 + " = " + difference);
+        System.out.println(num1 + " * " + num2 + " = " + product);
+
+        if (num2 != 0) {
+            System.out.println(num1 + " / " + num2 + " = " + quotient);
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
 }
